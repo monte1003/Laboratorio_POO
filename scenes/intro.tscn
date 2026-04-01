@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cxgsy0n5wfgea"]
 
-[ext_resource type="Texture2D" uid="uid://dy6ajrraqdc7i" path="res://Images/Captura_de_pantalla_2026-03-31_160203-removebg-preview.png" id="1_b226h"]
-[ext_resource type="Texture2D" uid="uid://cmid54j3uapaj" path="res://Images/Fondo Mensaje.jpeg" id="1_duh1u"]
+[ext_resource type="Texture2D" uid="uid://dy6ajrraqdc7i" path="res://assets/textures/menu/next.png" id="1_b226h"]
+[ext_resource type="Texture2D" uid="uid://cmid54j3uapaj" path="res://assets/textures/menu/intro_message.jpeg" id="1_duh1u"]
+[ext_resource type="Script" uid="uid://cqdvdqtgag6wd" path="res://scripts/intro.gd" id="3_4bx60"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_duh1u"]
 
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_4bx60")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=77018099]
 layout_mode = 1
@@ -58,6 +60,7 @@ offset_bottom = 217.84796
 
 [node name="Pasar" type="Button" parent="VBoxContainer" unique_id=1422398768]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_duh1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_b226h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_duh1u")

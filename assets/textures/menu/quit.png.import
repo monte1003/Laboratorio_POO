@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmid54j3uapaj"
-path="res://.godot/imported/Fondo Mensaje.jpeg-ffdb322194d31a9979863d0b206ba0e2.ctex"
+uid="uid://ch7utnfys8haq"
+path="res://.godot/imported/quit.png-07a0e29dbe7b9978786efb68c1101e7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/menu/Fondo Mensaje.jpeg"
-dest_files=["res://.godot/imported/Fondo Mensaje.jpeg-ffdb322194d31a9979863d0b206ba0e2.ctex"]
+source_file="res://assets/textures/menu/quit.png"
+dest_files=["res://.godot/imported/quit.png-07a0e29dbe7b9978786efb68c1101e7f.ctex"]
 
 [params]
 

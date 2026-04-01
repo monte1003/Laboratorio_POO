@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b3dwgb38fkiak"]
 
-[ext_resource type="Texture2D" uid="uid://cbg65s3gjvr1h" path="res://assets/textures/menu/Fondo menu .jpeg" id="1_158mb"]
+[ext_resource type="Texture2D" uid="uid://cbg65s3gjvr1h" path="res://assets/textures/menu/menu.jpeg" id="1_158mb"]
 [ext_resource type="Script" uid="uid://dfw52ikanttkg" path="res://scripts/menu.gd" id="1_wwsa2"]
-[ext_resource type="Texture2D" uid="uid://ckkl3ptw8t0ah" path="res://assets/textures/menu/Captura de pantalla 2026-03-31 142649.png" id="2_wwsa2"]
-[ext_resource type="Texture2D" uid="uid://dl2xtq5ysx5pt" path="res://assets/textures/menu/Captura de pantalla 2026-03-31 144320.png" id="3_jsrd8"]
-[ext_resource type="Texture2D" uid="uid://ch7utnfys8haq" path="res://assets/textures/menu/Captura de pantalla 2026-03-31 145242.png" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://ckkl3ptw8t0ah" path="res://assets/textures/menu/play.png" id="2_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://dl2xtq5ysx5pt" path="res://assets/textures/menu/options.png" id="3_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://ch7utnfys8haq" path="res://assets/textures/menu/quit.png" id="4_wbdvm"]
 
 [node name="Menu" type="Control" unique_id=1235527209]
 layout_mode = 3
@@ -59,11 +59,13 @@ grow_vertical = 2
 [node name="Play" type="Button" parent="ColorRect/VBoxContainer" unique_id=297886546]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 12
 icon = ExtResource("2_wwsa2")
 
 [node name="Options" type="Button" parent="ColorRect/VBoxContainer" unique_id=1773906782]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 12
 icon = ExtResource("3_jsrd8")
 icon_alignment = 1
@@ -71,6 +73,7 @@ vertical_icon_alignment = 2
 
 [node name="Quit" type="Button" parent="ColorRect/VBoxContainer" unique_id=185228285]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 12
 icon = ExtResource("4_wbdvm")
 icon_alignment = 1
