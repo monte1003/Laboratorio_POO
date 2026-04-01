@@ -1,4 +1,4 @@
-# Solo lleva directamente a menu.tscn por ahora.
+# Solo lleva directamente a main.tscn por ahora.
 extends Control
 
 func _on_Pasar_pressed() -> void: 
