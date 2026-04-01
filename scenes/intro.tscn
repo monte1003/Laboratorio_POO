@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dy6ajrraqdc7i" path="res://assets/textures/menu/next.png" id="1_b226h"]
 [ext_resource type="Texture2D" uid="uid://cmid54j3uapaj" path="res://assets/textures/menu/intro_message.jpeg" id="1_duh1u"]
-[ext_resource type="Script" uid="uid://cqdvdqtgag6wd" path="res://scripts/intro.gd" id="3_4bx60"]
+[ext_resource type="Script" uid="uid://dt3lkuootd6ar" path="res://scripts/intro.gd" id="3_4bx60"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_duh1u"]
 
@@ -65,3 +65,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_duh1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_b226h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_duh1u")
 icon = ExtResource("1_b226h")
+script = ExtResource("3_4bx60")
+
+[connection signal="pressed" from="VBoxContainer/Pasar" to="." method="_on_pasar_pressed"]
