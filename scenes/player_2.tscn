@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://02v068lsxu75"]
 
 [ext_resource type="Texture2D" uid="uid://dgv7485msvkak" path="res://assets/textures/entities/Characters/Default/character_beige_idle.png" id="1_l6tho"]
-[ext_resource type="Script" uid="uid://ci25nich5b6t0" path="res://scenes/player_2.gd" id="1_s551d"]
+[ext_resource type="Script" uid="uid://ci25nich5b6t0" path="res://scripts/player_2.gd" id="1_s551d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s551d"]
 radius = 41.03

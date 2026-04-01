@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ierovp11mwtv"]
+
+[ext_resource type="Script" uid="uid://cgr8klw2bnu75" path="res://scripts/ataques/EntidadAtaque.gd" id="1_nexlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nexlw"]
+size = Vector2(109.25, 89.25)
+
+[node name="EntidadAtaque" type="Area2D" unique_id=2086371570]
+collision_layer = 2
+script = ExtResource("1_nexlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701044165]
+shape = SubResource("RectangleShape2D_nexlw")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cfhlf1vu2e03w"]
+
+[ext_resource type="Texture2D" uid="uid://tqxehxyq3jh4" path="res://icon.svg" id="3_1pgrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7me8"]
+size = Vector2(193, 142)
+
+[node name="Area2D" type="Area2D" unique_id=1288524083]
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=216914063]
+position = Vector2(507, 122)
+texture = ExtResource("3_1pgrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1975610219]
+position = Vector2(503, 123)
+shape = SubResource("RectangleShape2D_w7me8")
+
+[node name="Label" type="Label" parent="." unique_id=563568218]
+offset_left = 429.0
+offset_top = 182.0
+offset_right = 591.0
+offset_bottom = 205.0
+text = "¡El rumor te arrastra!"
