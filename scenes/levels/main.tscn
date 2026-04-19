@@ -1,0 +1,68 @@
+[gd_scene format=4 uid="uid://c7ny0ah4uwgq2"]
+
+[ext_resource type="PackedScene" uid="uid://baxlvnuakvsf6" path="res://scenes/player.tscn" id="1_7lrji"]
+[ext_resource type="PackedScene" uid="uid://ciky2amq6v3nw" path="res://scenes/camera_2d.tscn" id="2_rssyh"]
+[ext_resource type="PackedScene" uid="uid://baq70gayu80vh" path="res://scenes/enemy_rumor.tscn" id="4_6ui35"]
+[ext_resource type="PackedScene" uid="uid://bsvlvi03pvccj" path="res://scenes/enemy_ofensa.tscn" id="5_y56qp"]
+[ext_resource type="PackedScene" uid="uid://dx7otb0wrwmmq" path="res://scenes/map.tscn" id="6_sv52t"]
+[ext_resource type="PackedScene" uid="uid://d35cjof7geu21" path="res://scenes/enemy_wall.tscn" id="7_7exfm"]
+[ext_resource type="PackedScene" uid="uid://bmneks7xbowh1" path="res://scenes/player_wall.tscn" id="8_qgoyv"]
+[ext_resource type="PackedScene" uid="uid://re2nc0luyaqf" path="res://scenes/enviroment_heart.tscn" id="9_px1c8"]
+[ext_resource type="PackedScene" uid="uid://bid3aniuqku45" path="res://scenes/level_end.tscn" id="10_xgklb"]
+[ext_resource type="PackedScene" uid="uid://uak8wtl6wsue" path="res://scenes/gui.tscn" id="11_5wre2"]
+
+[node name="Main" type="Node2D" unique_id=880945229]
+
+[node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_7lrji")]
+position = Vector2(127, 274)
+
+[node name="Player2" parent="." unique_id=2101689558 instance=ExtResource("1_7lrji")]
+position = Vector2(39, 272)
+player_id = 2
+
+[node name="Camera2D" parent="." unique_id=894477144 node_paths=PackedStringArray("p1", "p2") instance=ExtResource("2_rssyh")]
+p1 = NodePath("../Player")
+p2 = NodePath("../Player2")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1587010482]
+
+[node name="Enemy_Rumor" parent="Enemies" unique_id=1186592903 instance=ExtResource("4_6ui35")]
+position = Vector2(1038, 236)
+
+[node name="Enemy_Ofensa" parent="Enemies" unique_id=695796083 instance=ExtResource("5_y56qp")]
+position = Vector2(384, 289)
+
+[node name="Geometry" type="Node2D" parent="." unique_id=367027776]
+
+[node name="Map" parent="Geometry" unique_id=534971046 instance=ExtResource("6_sv52t")]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD7/wUAAAALAAkAAAD8/wUAAAALAAkAAAD9/wUAAAALAAkAAAD+/wUAAAALAAkAAAD//wUAAAALAAkAAAAAAAUAAAALAAkAAAABAAUAAAALAAkAAAACAAUAAAALAAkAAAADAAUAAAALAAkAAAAEAAUAAAALAAkAAAAFAAUAAAALAAkAAAAGAAUAAAALAAkAAAAHAAUAAAALAAkAAAAIAAUAAAALAAkAAAAJAAUAAAALAAkAAAAKAAUAAAALAAkAAAALAAUAAAALAAkAAAAMAAUAAAALAAkAAAANAAUAAAALAAkAAAAOAAUAAAALAAkAAAAPAAUAAAALAAkAAAAQAAUAAAALAAkAAAARAAUAAAALAAkAAAASAAUAAAALAAkAAAATAAUAAAALAAkAAAAUAAUAAAALAAkAAAAVAAUAAAALAAkAAAAWAAUAAAALAAkAAAAXAAUAAAALAAkAAAAYAAUAAAALAAkAAAAZAAUAAAALAAkAAAAaAAUAAAALAAkAAAAbAAUAAAALAAkAAAAcAAUAAAALAAkAAAAdAAUAAAALAAkAAAAeAAUAAAANAAkAAAD0/wUAAAAMAAkAAAD1/wUAAAALAAkAAAD2/wUAAAALAAkAAAD3/wUAAAALAAkAAAD4/wUAAAALAAkAAAD5/wUAAAALAAkAAAD6/wUAAAALAAkAAAD1/wYAAAAIAAkAAAD1/wcAAAAIAAkAAAD1/wgAAAAIAAkAAAD1/wkAAAAIAAkAAAD2/wYAAAAIAAkAAAD2/wcAAAAIAAkAAAD2/wgAAAAIAAkAAAD2/wkAAAAIAAkAAAD3/wYAAAAIAAkAAAD3/wcAAAAIAAkAAAD3/wgAAAAIAAkAAAD3/wkAAAAIAAkAAAD4/wYAAAAIAAkAAAD4/wcAAAAIAAkAAAD4/wgAAAAIAAkAAAD4/wkAAAAIAAkAAAD5/wYAAAAIAAkAAAD5/wcAAAAIAAkAAAD5/wgAAAAIAAkAAAD5/wkAAAAIAAkAAAD6/wYAAAAIAAkAAAD6/wcAAAAIAAkAAAD6/wgAAAAIAAkAAAD6/wkAAAAIAAkAAAD7/wYAAAAIAAkAAAD7/wcAAAAIAAkAAAD7/wgAAAAIAAkAAAD7/wkAAAAIAAkAAAD8/wYAAAAIAAkAAAD8/wcAAAAIAAkAAAD8/wgAAAAIAAkAAAD8/wkAAAAIAAkAAAD9/wYAAAAIAAkAAAD9/wcAAAAIAAkAAAD9/wgAAAAIAAkAAAD9/wkAAAAIAAkAAAD+/wYAAAAIAAkAAAD+/wcAAAAIAAkAAAD+/wgAAAAIAAkAAAD+/wkAAAAIAAkAAAD//wYAAAAIAAkAAAD//wcAAAAIAAkAAAD//wgAAAAIAAkAAAD//wkAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAcAAAAIAAkAAAAAAAgAAAAIAAkAAAAAAAkAAAAIAAkAAAABAAYAAAAIAAkAAAABAAcAAAAIAAkAAAABAAgAAAAIAAkAAAABAAkAAAAIAAkAAAACAAYAAAAIAAkAAAACAAcAAAAIAAkAAAACAAgAAAAIAAkAAAACAAkAAAAIAAkAAAADAAYAAAAIAAkAAAADAAcAAAAIAAkAAAADAAgAAAAIAAkAAAADAAkAAAAIAAkAAAAEAAYAAAAIAAkAAAAEAAcAAAAIAAkAAAAEAAgAAAAIAAkAAAAEAAkAAAAIAAkAAAAFAAYAAAAIAAkAAAAFAAcAAAAIAAkAAAAFAAgAAAAIAAkAAAAFAAkAAAAIAAkAAAAGAAYAAAAIAAkAAAAGAAcAAAAIAAkAAAAGAAgAAAAIAAkAAAAGAAkAAAAIAAkAAAAHAAYAAAAIAAkAAAAHAAcAAAAIAAkAAAAHAAgAAAAIAAkAAAAHAAkAAAAIAAkAAAAIAAYAAAAIAAkAAAAIAAcAAAAIAAkAAAAIAAgAAAAIAAkAAAAIAAkAAAAIAAkAAAAJAAYAAAAIAAkAAAAJAAcAAAAIAAkAAAAJAAgAAAAIAAkAAAAJAAkAAAAIAAkAAAAKAAYAAAAIAAkAAAAKAAcAAAAIAAkAAAAKAAgAAAAIAAkAAAAKAAkAAAAIAAkAAAALAAYAAAAIAAkAAAALAAcAAAAIAAkAAAALAAgAAAAIAAkAAAALAAkAAAAIAAkAAAAMAAYAAAAIAAkAAAAMAAcAAAAIAAkAAAAMAAgAAAAIAAkAAAAMAAkAAAAIAAkAAAANAAYAAAAIAAkAAAANAAcAAAAIAAkAAAANAAgAAAAIAAkAAAANAAkAAAAIAAkAAAAOAAYAAAAIAAkAAAAOAAcAAAAIAAkAAAAOAAgAAAAIAAkAAAAOAAkAAAAIAAkAAAAPAAYAAAAIAAkAAAAPAAcAAAAIAAkAAAAPAAgAAAAIAAkAAAAPAAkAAAAIAAkAAAAQAAYAAAAIAAkAAAAQAAcAAAAIAAkAAAAQAAgAAAAIAAkAAAAQAAkAAAAIAAkAAAARAAYAAAAIAAkAAAARAAcAAAAIAAkAAAARAAgAAAAIAAkAAAARAAkAAAAIAAkAAAASAAYAAAAIAAkAAAASAAcAAAAIAAkAAAASAAgAAAAIAAkAAAASAAkAAAAIAAkAAAATAAYAAAAIAAkAAAATAAcAAAAIAAkAAAATAAgAAAAIAAkAAAATAAkAAAAIAAkAAAAUAAYAAAAIAAkAAAAUAAcAAAAIAAkAAAAUAAgAAAAIAAkAAAAUAAkAAAAIAAkAAAAVAAYAAAAIAAkAAAAVAAcAAAAIAAkAAAAVAAgAAAAIAAkAAAAVAAkAAAAIAAkAAAAWAAYAAAAIAAkAAAAWAAcAAAAIAAkAAAAWAAgAAAAIAAkAAAAWAAkAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAcAAAAIAAkAAAAXAAgAAAAIAAkAAAAXAAkAAAAIAAkAAAAYAAYAAAAIAAkAAAAYAAcAAAAIAAkAAAAYAAgAAAAIAAkAAAAYAAkAAAAIAAkAAAAZAAYAAAAIAAkAAAAZAAcAAAAIAAkAAAAZAAgAAAAIAAkAAAAZAAkAAAAIAAkAAAAaAAYAAAAIAAkAAAAaAAcAAAAIAAkAAAAaAAgAAAAIAAkAAAAaAAkAAAAIAAkAAAAbAAYAAAAIAAkAAAAbAAcAAAAIAAkAAAAbAAgAAAAIAAkAAAAbAAkAAAAIAAkAAAAcAAYAAAAIAAkAAAAcAAcAAAAIAAkAAAAcAAgAAAAIAAkAAAAcAAkAAAAIAAkAAAAdAAYAAAAIAAkAAAAdAAcAAAAIAAkAAAAdAAgAAAAIAAkAAAAdAAkAAAAIAAkAAAD0/wYAAAAJAAkAAAD0/wcAAAAJAAkAAAD0/wgAAAAJAAkAAAD0/wkAAAAJAAkAAAAeAAYAAAAKAAkAAAAeAAcAAAAKAAkAAAAeAAgAAAAKAAkAAAAeAAkAAAAKAAkAAAA=")
+
+[node name="Enemy_Wall" parent="Geometry" unique_id=529289322 instance=ExtResource("7_7exfm")]
+position = Vector2(281, 153)
+
+[node name="Enemy_Wall2" parent="Geometry" unique_id=884916033 instance=ExtResource("7_7exfm")]
+position = Vector2(848, 163)
+
+[node name="Player_Wall" parent="Geometry" unique_id=553269821 instance=ExtResource("8_qgoyv")]
+position = Vector2(-101, 242)
+
+[node name="Items" type="Node2D" parent="." unique_id=122756264]
+
+[node name="Enviroment_Heart" parent="Items" unique_id=1457216428 instance=ExtResource("9_px1c8")]
+position = Vector2(1416, 248)
+
+[node name="Enviroment_Heart2" parent="Items" unique_id=1948418135 instance=ExtResource("9_px1c8")]
+position = Vector2(1343, 250)
+
+[node name="Enviroment_Heart3" parent="Items" unique_id=835769027 instance=ExtResource("9_px1c8")]
+position = Vector2(1274, 250)
+
+[node name="Level_End" parent="Items" unique_id=108196674 instance=ExtResource("10_xgklb")]
+position = Vector2(1576, 239)
+load_level = "res://scenes/levels/level_2.tscn"
+
+[node name="GUI" parent="." unique_id=1582347850 instance=ExtResource("11_5wre2")]
+
+[connection signal="body_entered" from="Enemies/Enemy_Rumor" to="Player" method="game_over"]
+[connection signal="body_entered" from="Enemies/Enemy_Ofensa" to="Player" method="game_over"]

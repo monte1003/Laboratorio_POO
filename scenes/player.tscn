@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://baxlvnuakvsf6"]
+
+[ext_resource type="Script" uid="uid://cuyfgo2fgvfbk" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://jmq8vuxkxseu" path="res://assets/textures/entities/Character Sprites/boy/Idle (1).png" id="2_g2els"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2els")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
+radius = 6.3333335
+height = 27.333334
+
+[node name="Player" type="CharacterBody2D" unique_id=439786026 groups=["players"]]
+collision_mask = 46
+script = ExtResource("1_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=31258974]
+position = Vector2(-27, -60)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_3vyb7")
+animation = &"idle"
+centered = false
+offset = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469474505]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_u8vuu")
