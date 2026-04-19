@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bsksb5uo7smc6"]
+
+[ext_resource type="PackedScene" uid="uid://ierovp11mwtv" path="res://scenes/ataques/EntidadAtaque.tscn" id="1_c1ua8"]
+[ext_resource type="Script" uid="uid://clysy1aqcrynt" path="res://scripts/ataques/ObstaculoRumor.gd" id="2_jdwpx"]
+[ext_resource type="Texture2D" uid="uid://tqxehxyq3jh4" path="res://icon.svg" id="3_2jufc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2jufc"]
+
+[node name="ObstaculoRumor" unique_id=2086371570 instance=ExtResource("1_c1ua8")]
+collision_layer = 3
+script = ExtResource("2_jdwpx")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=701044165]
+position = Vector2(548, 62)
+scale = Vector2(1.0792079, 0.8848921)
+debug_color = Color(0.8022267, 0.39834797, 0.3589426, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=1439484878]
+position = Vector2(544, 62)
+scale = Vector2(0.6666667, 0.5846154)
+texture = ExtResource("3_2jufc")
+
+[node name="Label" type="Label" parent="." index="2" unique_id=450783951]
+offset_left = 469.0
+offset_top = 97.0
+offset_right = 638.0
+offset_bottom = 120.0
+text = "\"¡RUMOR AGRESIVO!\"."
+label_settings = SubResource("LabelSettings_2jufc")
+horizontal_alignment = 1

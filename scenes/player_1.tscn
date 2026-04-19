@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://5dqy8cvjakh7"]
+
+[ext_resource type="Script" uid="uid://bhbvbpopbqok6" path="res://scripts/player_1.gd" id="1_gneq0"]
+[ext_resource type="Texture2D" uid="uid://l2apffm7f4yf" path="res://assets/textures/entities/Characters/Default/character_green_idle.png" id="2_f7tsm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vod78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f7tsm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqd30"]
+radius = 33.0
+height = 94.0
+
+[node name="Player1" type="CharacterBody2D" unique_id=1192362596]
+script = ExtResource("1_gneq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=79862959]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_vod78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1767825744]
+shape = SubResource("CapsuleShape2D_wqd30")
