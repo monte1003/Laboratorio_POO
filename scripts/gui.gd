@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 func _ready()-> void:
-	Global.connect("update_heart", update_heart)
+	
+	Global.update_heart.connect(update_heart)
 	$Label_Heart.text = "0"
 	
 func update_heart() -> void:
