@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JIMS Cybersafe Studios"
-run/main_scene="uid://c7ny0ah4uwgq2"
+run/main_scene="uid://b3dwgb38fkiak"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]

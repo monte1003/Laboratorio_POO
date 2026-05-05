@@ -5,7 +5,7 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	Global.heart += value
-	Global.update_heart.emit()
-	print(Global.heart)
+#	Global.heart += value
+#	Global.update_heart.emit()
+#	print(Global.heart)
 	queue_free()
