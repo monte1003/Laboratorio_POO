@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cbrgim03ooels"]
+
+[ext_resource type="Script" uid="uid://cx0ijt7jujiok" path="res://scenes/splash.gd" id="1_4rrho"]
+[ext_resource type="Texture2D" uid="uid://dnib0eq6w01te" path="res://assets/textures/menu/jcs_logos.png" id="1_86pdq"]
+[ext_resource type="AudioStream" uid="uid://bosta5ma2s3xk" path="res://assets/sounds/jingle.mp3" id="2_10vqf"]
+
+[node name="Splash" type="Node2D" unique_id=94966445]
+script = ExtResource("1_4rrho")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1270549488]
+offset_right = 959.0
+offset_bottom = 540.0
+texture = ExtResource("1_86pdq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1244930552]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Jingle" type="AudioStreamPlayer2D" parent="." unique_id=1886266425]
+stream = ExtResource("2_10vqf")
