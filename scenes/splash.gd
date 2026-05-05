@@ -7,6 +7,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Start the sound
+	$AnimationPlayer.play("fadeIn")
 	audio.play()
 	
 	# Connect the signal: When audio stops, change scene
