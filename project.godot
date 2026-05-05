@@ -14,6 +14,10 @@ config/name="JIMS Cybersafe Studios"
 run/main_scene="uid://cbrgim03ooels"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Global="*uid://d1tced81gh4k6"
+
 [display]
 
 window/size/viewport_width=960
