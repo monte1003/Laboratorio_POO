@@ -60,6 +60,7 @@ offset_bottom = 696.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229121665]
 libraries/ = SubResource("AnimationLibrary_31efs")
+speed_scale = 3.0
 
 [node name="Jingle" type="AudioStreamPlayer" parent="." unique_id=1593417360]
 stream = ExtResource("2_10vqf")
