@@ -1,11 +1,56 @@
 [gd_scene format=3 uid="uid://cbc520phbvxvd"]
 
+[ext_resource type="Script" uid="uid://lb7icfuva4hw" path="res://scripts/boss_level_3.gd" id="1_8vt2q"]
+[ext_resource type="Texture2D" uid="uid://begwrvieq2kuf" path="res://assets/textures/entities/Enemies/boss1.png" id="1_yq64e"]
+[ext_resource type="Texture2D" uid="uid://hdbyh04f2ha2" path="res://assets/textures/entities/Enemies/boss3.png" id="2_8vt2q"]
+[ext_resource type="PackedScene" uid="uid://d3mpau4onusnc" path="res://scenes/fireball.tscn" id="2_dolox"]
+[ext_resource type="Texture2D" uid="uid://c0pnn6gcpuguc" path="res://assets/textures/entities/Enemies/boss4.png" id="3_dolox"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_msuoc"]
 
-[node name="BossLevel3" type="Area2D" unique_id=2079599919]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dr8xj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yq64e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8vt2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dolox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BossLevel3" type="CharacterBody2D" unique_id=1370299789]
+script = ExtResource("1_8vt2q")
+fireball_scene = ExtResource("2_dolox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=169535224]
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_msuoc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1004882566]
+scale = Vector2(0.23, 0.23)
+sprite_frames = SubResource("SpriteFrames_dr8xj")
+autoplay = "default"
+frame_progress = 0.8865483
+
+[node name="TopLeft" type="Marker2D" parent="." unique_id=1452335832]
+position = Vector2(-450, -120)
+
+[node name="TopRight" type="Marker2D" parent="." unique_id=1561759802]
+position = Vector2(493, -120)
+
+[node name="BottomLeft" type="Marker2D" parent="." unique_id=1671822862]
+position = Vector2(-450, 113)
+
+[node name="BottomRight" type="Marker2D" parent="." unique_id=227543433]
+position = Vector2(490, 113)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=525631917]
+
+[node name="PhaseTimer" type="Timer" parent="." unique_id=249188449]

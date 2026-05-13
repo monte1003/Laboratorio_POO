@@ -15,6 +15,9 @@ var action_left:String
 var action_right:String
 var action_jump:String
 
+# NUEVO
+var dead: bool = false
+
 
 func _ready() -> void:
 	action_left = "p%d_izquierda" % player_id
@@ -23,6 +26,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# SI ESTA MUERTO
+	if dead:
+		velocity.x = 0
+		move_and_slide()
+		return
+	
 	_apply_gravity(delta)
 	_handle_jump()
 	_handle_movement(delta)
@@ -40,12 +49,20 @@ func _handle_movement(delta: float) -> void:
 	var direction := Input.get_axis(action_left, action_right)
 
 	if direction != 0:
-		velocity.x = move_toward(velocity.x,direction * speed,move_accel * delta)
+		velocity.x = move_toward(
+			velocity.x,
+			direction * speed,
+			move_accel * delta
+		)
 
 		anim.flip_h = direction < 0
 
 	else:
-		velocity.x = move_toward(velocity.x,0,move_friction * delta)
+		velocity.x = move_toward(
+			velocity.x,
+			0,
+			move_friction * delta
+		)
 
 
 func _handle_jump() -> void:
@@ -69,4 +86,13 @@ func _handle_animation() -> void:
 
 
 func game_over(body: Node2D) -> void:
+	dead = true
+	
+	
+	velocity = Vector2.ZERO
+	
+	anim.play("death")
+
+	await get_tree().create_timer(2.5).timeout
+	
 	get_tree().call_deferred("reload_current_scene")

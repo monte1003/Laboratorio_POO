@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cl363psde4i4n"]
+
+[ext_resource type="Texture2D" uid="uid://qmv2gis265h7" path="res://assets/textures/enviroment/lantern1.jpeg" id="1_jdg25"]
+[ext_resource type="Texture2D" uid="uid://cto1q52jbbrnx" path="res://assets/textures/enviroment/lantern2.jpeg" id="2_y6stn"]
+[ext_resource type="Texture2D" uid="uid://cuyundrxswk7d" path="res://assets/textures/enviroment/lantern3.jpeg" id="3_4a08e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5omvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdg25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y6stn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4a08e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lantern" type="AnimatedSprite2D" unique_id=787012657]
+sprite_frames = SubResource("SpriteFrames_5omvi")
+autoplay = "default"
+frame_progress = 0.40257654

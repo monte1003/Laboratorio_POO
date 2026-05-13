@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://baxlvnuakvsf6"]
 
 [ext_resource type="Script" uid="uid://cuyfgo2fgvfbk" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bxubnc2i1xvfj" path="res://assets/textures/entities/Character Sprites/boy/Dead__000.png" id="2_2dvfe"]
 [ext_resource type="Texture2D" uid="uid://cwamche6g16kj" path="res://assets/textures/entities/Character Sprites/boy/Idle__000.png" id="2_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://y7ra5q44p3xc" path="res://assets/textures/entities/Character Sprites/boy/Dead__001.png" id="3_giy8y"]
 [ext_resource type="Texture2D" uid="uid://bwmi8m3yyn1av" path="res://assets/textures/entities/Character Sprites/boy/Idle__001.png" id="3_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://bbldvlkjri54u" path="res://assets/textures/entities/Character Sprites/boy/Idle__002.png" id="4_487ah"]
+[ext_resource type="Texture2D" uid="uid://b0t5g1ij2i04j" path="res://assets/textures/entities/Character Sprites/boy/Dead__002.png" id="4_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://d0dontpyiuo72" path="res://assets/textures/entities/Character Sprites/boy/Dead__003.png" id="5_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://b57jxjoc2lurr" path="res://assets/textures/entities/Character Sprites/boy/Idle__003.png" id="5_md1ol"]
 [ext_resource type="Texture2D" uid="uid://ccdiifturcgpk" path="res://assets/textures/entities/Character Sprites/boy/Idle__004.png" id="6_bj30b"]
+[ext_resource type="Texture2D" uid="uid://p34hejrf4hj4" path="res://assets/textures/entities/Character Sprites/boy/Dead__004.png" id="6_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://c0nbngsk6q4qm" path="res://assets/textures/entities/Character Sprites/boy/Dead__005.png" id="7_holxr"]
 [ext_resource type="Texture2D" uid="uid://ct4mtoigg3fbj" path="res://assets/textures/entities/Character Sprites/boy/Idle__005.png" id="7_jc3p3"]
 [ext_resource type="Texture2D" uid="uid://b3o284eo3r85v" path="res://assets/textures/entities/Character Sprites/boy/Idle__006.png" id="8_hax0n"]
+[ext_resource type="Texture2D" uid="uid://g3eoujqylhaq" path="res://assets/textures/entities/Character Sprites/boy/Dead__006.png" id="8_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://bphqk75jeqa3g" path="res://assets/textures/entities/Character Sprites/boy/Dead__007.png" id="9_4gjji"]
 [ext_resource type="Texture2D" uid="uid://dy77pxf056lhv" path="res://assets/textures/entities/Character Sprites/boy/Idle__007.png" id="9_t4otl"]
 [ext_resource type="Texture2D" uid="uid://copmd7ljao4dw" path="res://assets/textures/entities/Character Sprites/boy/Idle__008.png" id="10_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://cswkubqj7ma6s" path="res://assets/textures/entities/Character Sprites/boy/Dead__008.png" id="10_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://1h52sc2s80kk" path="res://assets/textures/entities/Character Sprites/boy/Dead__009.png" id="11_6e8lb"]
 [ext_resource type="Texture2D" uid="uid://dg6rg6ude1384" path="res://assets/textures/entities/Character Sprites/boy/Idle__009.png" id="11_cs1tg"]
 [ext_resource type="Texture2D" uid="uid://cvxo0xx55ls02" path="res://assets/textures/entities/Character Sprites/boy/Jump__000.png" id="12_2dvfe"]
 [ext_resource type="Texture2D" uid="uid://dmgqxjt0v680t" path="res://assets/textures/entities/Character Sprites/boy/Jump__001.png" id="13_giy8y"]
@@ -34,6 +44,41 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_giy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hhpqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u2ulf")
+}, {
+"duration": 999.0,
+"texture": ExtResource("11_6e8lb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_wnwbv")
@@ -153,9 +198,9 @@ unique_name_in_owner = true
 position = Vector2(-1.9073486e-06, -3.8146973e-06)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"jump"
+animation = &"death"
 frame = 9
-frame_progress = 0.10691791
+frame_progress = 0.86303854
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469474505]
 scale = Vector2(3, 3)
