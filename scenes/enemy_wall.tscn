@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d35cjof7geu21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meoy4"]
+size = Vector2(34, 373)
+
+[node name="Enemy_Wall" type="Area2D" unique_id=529289322]
+collision_layer = 64
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309701803]
+shape = SubResource("RectangleShape2D_meoy4")

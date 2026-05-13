@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bsvlvi03pvccj"]
+
+[ext_resource type="Script" uid="uid://br2s6ca5ia183" path="res://scripts/enemy_ofensa.gd" id="1_rp61j"]
+[ext_resource type="Texture2D" uid="uid://cbp3tky5bd6h" path="res://assets/textures/entities/Enemies/Default/saw_a.png" id="2_2cl08"]
+[ext_resource type="Texture2D" uid="uid://drrjkf84tp6ng" path="res://assets/textures/entities/Enemies/Default/saw_b.png" id="3_6n4qk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0bn2"]
+animations = [{
+"frames": [{
+"duration": 1.3,
+"texture": ExtResource("2_2cl08")
+}, {
+"duration": 1.3,
+"texture": ExtResource("3_6n4qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovkrb"]
+
+[node name="Enemy_Ofensa" type="Area2D" unique_id=695796083]
+collision_layer = 4
+collision_mask = 65
+script = ExtResource("1_rp61j")
+face_left = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2146336053]
+sprite_frames = SubResource("SpriteFrames_q0bn2")
+autoplay = "default"
+frame_progress = 0.07037923
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519364451]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_ovkrb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

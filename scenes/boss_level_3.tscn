@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cbc520phbvxvd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_msuoc"]
+
+[node name="BossLevel3" type="Area2D" unique_id=2079599919]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=169535224]
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_msuoc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1004882566]

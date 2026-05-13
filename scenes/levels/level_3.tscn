@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ch1pljqmnf7yi"]
+
+[ext_resource type="PackedScene" uid="uid://baxlvnuakvsf6" path="res://scenes/player.tscn" id="1_44gv1"]
+[ext_resource type="PackedScene" uid="uid://dx7otb0wrwmmq" path="res://scenes/map.tscn" id="2_0ljxa"]
+
+[node name="level_3" type="Node2D" unique_id=1704252430]
+
+[node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_44gv1")]
+
+[node name="Map" parent="." unique_id=534971046 instance=ExtResource("2_0ljxa")]
+
+[node name="Geometry" type="Node2D" parent="." unique_id=792795048]
+
+[node name="Enemy" type="Node2D" parent="." unique_id=2008949745]

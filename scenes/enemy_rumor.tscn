@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://baq70gayu80vh"]
+
+[ext_resource type="Script" uid="uid://ddr53ci2vnx5r" path="res://scripts/enemy_rumor.gd" id="1_d72a2"]
+[ext_resource type="Texture2D" uid="uid://iefr4wvtc8bg" path="res://assets/textures/entities/Enemies/Default/tween_rumor.png" id="2_3pq24"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhir5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3pq24")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yddry"]
+radius = 73.0
+height = 210.0
+
+[node name="Enemy_Rumor" type="Area2D" unique_id=1186592903]
+collision_layer = 4
+script = ExtResource("1_d72a2")
+transition = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1407988954]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mhir5")
+frame_progress = 0.4150323
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=208772099]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_yddry")

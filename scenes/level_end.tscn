@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bid3aniuqku45"]
+
+[ext_resource type="Script" uid="uid://h5rfp4qphpio" path="res://scripts/level_end.gd" id="1_8dmmi"]
+[ext_resource type="Texture2D" uid="uid://xl215k3kwub0" path="res://assets/textures/enviroment/flag_off.png" id="1_jgevt"]
+[ext_resource type="Texture2D" uid="uid://5c73s8vjay3" path="res://assets/textures/enviroment/flag_blue_a.png" id="2_8dmmi"]
+[ext_resource type="Texture2D" uid="uid://cmmhq3v8me8j2" path="res://assets/textures/enviroment/flag_blue_b.png" id="3_m2wtj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbkx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jgevt")
+}],
+"loop": false,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8dmmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m2wtj")
+}],
+"loop": true,
+"name": &"on",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a7ff"]
+size = Vector2(20, 115)
+
+[node name="Level_End" type="Area2D" unique_id=108196674 node_paths=PackedStringArray("animation")]
+collision_layer = 8
+script = ExtResource("1_8dmmi")
+animation = NodePath("AnimatedSprite2D")
+
+[node name="FlagOff" type="Sprite2D" parent="." unique_id=1546239134]
+position = Vector2(22, 53)
+texture = ExtResource("1_jgevt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=536699967]
+position = Vector2(22, 0)
+sprite_frames = SubResource("SpriteFrames_gbkx2")
+animation = &"on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609456362]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_3a7ff")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
