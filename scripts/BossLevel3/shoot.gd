@@ -20,8 +20,13 @@ func _on_timer_timeout() -> void:
 	shoot()
 	
 func shoot():
+	# Validar que exista un jugador antes de intentar disparar
+	if not is_instance_valid(owner.player):
+		return
+		
 	var ray_1 = ray_1_node.instantiate()
 	ray_1.position = global_position
-	ray_1.direction = (player.global_position - global_position).normalized()
+	# --- MODIFICADO: Usa owner.player ---
+	ray_1.direction = (owner.player.global_position - global_position).normalized()
 	
 	get_tree().current_scene.call_deferred("add_child", ray_1)

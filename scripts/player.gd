@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 @export var player_id:int = 1
 
-@export var speed:float = 300.0
+@export var speed:float = 600
 @export var move_accel:float = 1200.0
-@export var move_friction:float = 1800.0
+@export var move_friction:float = 4000
 
-@export var jump_force:float = -400.0
+@export var jump_force:float = -800
 @export var jump_cut:float = 0.35
 
 @onready var anim:AnimatedSprite2D = %AnimatedSprite2D
@@ -15,8 +15,9 @@ var action_left:String
 var action_right:String
 var action_jump:String
 
-# NUEVO
 var dead: bool = false
+
+@export var projectile_scene: PackedScene
 
 
 func _ready() -> void:
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
 	_handle_jump()
 	_handle_movement(delta)
+	_handle_attack()
 	_handle_animation()
 	
 	move_and_slide()
@@ -74,6 +76,24 @@ func _handle_jump() -> void:
 	# Jump variable
 	if Input.is_action_just_released(action_jump) and velocity.y < 0:
 		velocity.y *= jump_cut
+		
+func _handle_attack() -> void:
+	if Input.is_action_just_pressed(action_jump):
+		if not projectile_scene:
+			return
+			
+		# Instanciar el proyectil
+		var projectile = projectile_scene.instantiate()
+		
+		# Determinar la dirección basada en el flip del sprite (-1 izquierda, 1 derecha)
+		var direction = -1.0 if anim.flip_h else 1.0
+		
+		# Pasar la dirección y la posición inicial al proyectil
+		projectile.direction = direction
+		projectile.global_position = global_position
+		
+		# Añadirlo a la escena principal (para que no herede el movimiento del jugador)
+		get_tree().current_scene.add_child(projectile)
 
 
 func _handle_animation() -> void:

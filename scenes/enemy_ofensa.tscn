@@ -27,12 +27,13 @@ script = ExtResource("1_rp61j")
 face_left = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2146336053]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_q0bn2")
 autoplay = "default"
 frame_progress = 0.07037923
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519364451]
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_ovkrb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

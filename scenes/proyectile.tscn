@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvhs7pjcn8jts"]
+
+[ext_resource type="Script" uid="uid://hiatlqtnrsuq" path="res://scripts/proyectile.gd" id="1_23gut"]
+[ext_resource type="Texture2D" uid="uid://bin3p6pjeoe0q" path="res://assets/textures/entities/Character Sprites/ChatGPT Image 16 may 2026, 01_30_14 p.m..png" id="1_160ws"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23gut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_160ws")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23gut"]
+
+[node name="Proyectile" type="Area2D" unique_id=1024150]
+collision_layer = 64
+collision_mask = 4
+script = ExtResource("1_23gut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1981087533]
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_23gut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=121564399]
+position = Vector2(32, -3)
+scale = Vector2(1.86, 1.86)
+shape = SubResource("CircleShape2D_23gut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

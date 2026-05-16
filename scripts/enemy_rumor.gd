@@ -15,4 +15,10 @@ func _ready() -> void:
 	tween.tween_property(self,"position",Vector2.DOWN * distance, time ).as_relative()
 
 func _on_body_entered(body: Node2D) -> void:
-	body.game_over()
+
+	if body.has_method("game_over"):
+
+		for node in get_tree().get_nodes_in_group("players"):
+
+			if node.has_method("game_over"):
+				node.game_over()

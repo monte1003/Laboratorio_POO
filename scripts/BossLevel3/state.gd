@@ -1,9 +1,9 @@
 extends Node2D
-
 class_name State
 #ABSTRACT CLASS
 
-@onready var player = owner.get_parent().find_child("Player")
+# --- MODIFICADO: Ahora lee el objetivo dinámico del script Principal ---
+@onready var player = owner.player
 @onready var ray_cast = owner.find_child("RayCast2D")
 @onready var debug = owner.find_child("debug")
 
@@ -20,5 +20,7 @@ func transition():
 	pass
 	
 func _physics_process(delta: float) -> void:
+	# Mantener actualizado el player local con el del owner por si cambia de objetivo
+	player = owner.player
 	transition()
 	debug.text = name
