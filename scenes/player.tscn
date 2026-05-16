@@ -198,9 +198,7 @@ unique_name_in_owner = true
 position = Vector2(-1.9073486e-06, -3.8146973e-06)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"death"
-frame = 9
-frame_progress = 0.86303854
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469474505]
 scale = Vector2(3, 3)

@@ -20,6 +20,8 @@ var dead: bool = false
 
 
 func _ready() -> void:
+	add_to_group("players")
+	
 	action_left = "p%d_izquierda" % player_id
 	action_right = "p%d_derecha" % player_id
 	action_jump = "p%d_arriba" % player_id
@@ -86,13 +88,13 @@ func _handle_animation() -> void:
 
 
 func game_over(body: Node2D) -> void:
+	if dead:
+		return
 	dead = true
-	
-	
 	velocity = Vector2.ZERO
-	
 	anim.play("death")
-
-	await get_tree().create_timer(2.5).timeout
 	
-	get_tree().call_deferred("reload_current_scene")
+
+	if player_id == 1:
+		await get_tree().create_timer(2.5).timeout
+		get_tree().reload_current_scene()

@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cl363psde4i4n" path="res://scenes/lantern.tscn" id="2_0qepi"]
 [ext_resource type="PackedScene" uid="uid://ciky2amq6v3nw" path="res://scenes/camera_2d.tscn" id="3_0ljxa"]
 [ext_resource type="PackedScene" uid="uid://cbc520phbvxvd" path="res://scenes/boss_level_3.tscn" id="5_fmg3e"]
-[ext_resource type="PackedScene" uid="uid://d3mpau4onusnc" path="res://scenes/fireball.tscn" id="6_ftfob"]
 
 [node name="level_3" type="Node2D" unique_id=1704252430]
 
@@ -45,11 +44,11 @@ position = Vector2(2246, -55)
 position = Vector2(1248, -143)
 
 [node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_44gv1")]
-position = Vector2(-433, 1)
+position = Vector2(1906, -10)
 jump_force = -620.0
 
 [node name="Player2" parent="." unique_id=1678927598 instance=ExtResource("1_44gv1")]
-position = Vector2(-525, -1)
+position = Vector2(1707, -12)
 player_id = 2
 jump_force = -620.0
 
@@ -62,6 +61,3 @@ p2 = NodePath("../Player2")
 
 [node name="BossLevel3" parent="." unique_id=2079599919 instance=ExtResource("5_fmg3e")]
 position = Vector2(1826, -185)
-
-[node name="Fireball" parent="." unique_id=2073303002 instance=ExtResource("6_ftfob")]
-position = Vector2(2364, -1067)

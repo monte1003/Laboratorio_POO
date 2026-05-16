@@ -34,3 +34,4 @@ position = Vector2(284, -655)
 position = Vector2(435, 407)
 
 [connection signal="body_entered" from="Geometry/Lava" to="Player" method="game_over"]
+[connection signal="body_entered" from="Geometry/Lava" to="Player2" method="game_over"]

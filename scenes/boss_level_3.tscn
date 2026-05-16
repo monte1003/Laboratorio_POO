@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cbc520phbvxvd"]
 
-[ext_resource type="Script" uid="uid://lb7icfuva4hw" path="res://scripts/boss_level_3.gd" id="1_8vt2q"]
-[ext_resource type="Texture2D" uid="uid://begwrvieq2kuf" path="res://assets/textures/entities/Enemies/boss1.png" id="1_yq64e"]
-[ext_resource type="Texture2D" uid="uid://hdbyh04f2ha2" path="res://assets/textures/entities/Enemies/boss3.png" id="2_8vt2q"]
-[ext_resource type="PackedScene" uid="uid://d3mpau4onusnc" path="res://scenes/fireball.tscn" id="2_dolox"]
-[ext_resource type="Texture2D" uid="uid://c0pnn6gcpuguc" path="res://assets/textures/entities/Enemies/boss4.png" id="3_dolox"]
+[ext_resource type="Script" uid="uid://lb7icfuva4hw" path="res://scripts/BossLevel3/boss_level_3.gd" id="1_8vt2q"]
+[ext_resource type="Texture2D" uid="uid://begwrvieq2kuf" path="res://assets/textures/entities/Enemies/BossLevel3/idle/boss1.png" id="1_yq64e"]
+[ext_resource type="Texture2D" uid="uid://hdbyh04f2ha2" path="res://assets/textures/entities/Enemies/BossLevel3/idle/boss3.png" id="2_8vt2q"]
+[ext_resource type="Texture2D" uid="uid://c0pnn6gcpuguc" path="res://assets/textures/entities/Enemies/BossLevel3/idle/boss4.png" id="3_dolox"]
+[ext_resource type="Script" uid="uid://dtonelmtmuvob" path="res://scripts/BossLevel3/idle.gd" id="6_8knxk"]
+[ext_resource type="Script" uid="uid://djj5yk7xcoiab" path="res://scripts/BossLevel3/finite_state_machine.gd" id="6_dr8xj"]
+[ext_resource type="Script" uid="uid://c7rvip7tt386j" path="res://scripts/BossLevel3/shoot.gd" id="7_8knxk"]
+[ext_resource type="Script" uid="uid://gw3eny10fs03" path="res://scripts/BossLevel3/follow.gd" id="8_2xcup"]
+[ext_resource type="PackedScene" uid="uid://b0umckq41le0b" path="res://scenes/ray_1.tscn" id="8_6d0fp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_msuoc"]
 
@@ -25,9 +29,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_dr8xj"]
+font_size = 32
+
 [node name="BossLevel3" type="CharacterBody2D" unique_id=1370299789]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_8vt2q")
-fireball_scene = ExtResource("2_dolox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=169535224]
 scale = Vector2(5, 5)
@@ -38,6 +46,24 @@ scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_dr8xj")
 autoplay = "default"
 frame_progress = 0.8865483
+
+[node name="FiniteStateMachine" type="Node2D" parent="." unique_id=534745003]
+script = ExtResource("6_dr8xj")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMachine" unique_id=479523712]
+script = ExtResource("6_8knxk")
+
+[node name="Shoot" type="Node2D" parent="FiniteStateMachine" unique_id=1047138518]
+script = ExtResource("7_8knxk")
+ray_1_node = ExtResource("8_6d0fp")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot" unique_id=1043500767]
+wait_time = 0.75
+
+[node name="Follow" type="Node2D" parent="FiniteStateMachine" unique_id=1070890614]
+script = ExtResource("8_2xcup")
+
+[node name="Dash" type="Node2D" parent="FiniteStateMachine" unique_id=588023642]
 
 [node name="TopLeft" type="Marker2D" parent="." unique_id=1452335832]
 position = Vector2(-450, -120)
@@ -54,3 +80,15 @@ position = Vector2(490, 113)
 [node name="AttackTimer" type="Timer" parent="." unique_id=525631917]
 
 [node name="PhaseTimer" type="Timer" parent="." unique_id=249188449]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1834869217]
+
+[node name="debug" type="Label" parent="." unique_id=1656805637]
+offset_left = -37.0
+offset_top = -128.0
+offset_right = 35.0
+offset_bottom = -83.0
+text = "TEST"
+label_settings = SubResource("LabelSettings_dr8xj")
+
+[connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]

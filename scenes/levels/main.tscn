@@ -13,25 +13,6 @@
 
 [node name="Main" type="Node2D" unique_id=880945229]
 
-[node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_7lrji")]
-position = Vector2(127, 274)
-
-[node name="Player2" parent="." unique_id=2101689558 instance=ExtResource("1_7lrji")]
-position = Vector2(39, 272)
-player_id = 2
-
-[node name="Camera2D" parent="." unique_id=894477144 node_paths=PackedStringArray("p1", "p2") instance=ExtResource("2_rssyh")]
-p1 = NodePath("../Player")
-p2 = NodePath("../Player2")
-
-[node name="Enemies" type="Node2D" parent="." unique_id=1587010482]
-
-[node name="Enemy_Rumor" parent="Enemies" unique_id=1186592903 instance=ExtResource("4_6ui35")]
-position = Vector2(3933, 256)
-
-[node name="Enemy_Ofensa" parent="Enemies" unique_id=695796083 instance=ExtResource("5_y56qp")]
-position = Vector2(3039, 291)
-
 [node name="Geometry" type="Node2D" parent="." unique_id=367027776]
 
 [node name="Map" parent="Geometry" unique_id=534971046 instance=ExtResource("6_sv52t")]
@@ -46,6 +27,26 @@ position = Vector2(3335, 144)
 
 [node name="Player_Wall" parent="Geometry" unique_id=553269821 instance=ExtResource("8_qgoyv")]
 position = Vector2(-101, 242)
+
+[node name="Camera2D" parent="." unique_id=894477144 node_paths=PackedStringArray("p1", "p2") instance=ExtResource("2_rssyh")]
+zoom = Vector2(1.6, 1.6)
+p1 = NodePath("../Player")
+p2 = NodePath("../Player2")
+
+[node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_7lrji")]
+position = Vector2(428, -470)
+
+[node name="Player2" parent="." unique_id=2101689558 instance=ExtResource("1_7lrji")]
+position = Vector2(192, -456)
+player_id = 2
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1587010482]
+
+[node name="Enemy_Rumor" parent="Enemies" unique_id=1186592903 instance=ExtResource("4_6ui35")]
+position = Vector2(3933, 256)
+
+[node name="Enemy_Ofensa" parent="Enemies" unique_id=695796083 instance=ExtResource("5_y56qp")]
+position = Vector2(3039, 291)
 
 [node name="Items" type="Node2D" parent="." unique_id=122756264]
 

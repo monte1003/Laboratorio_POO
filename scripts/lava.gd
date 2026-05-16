@@ -1,11 +1,16 @@
 extends Area2D
 
-# Esta variable controla qué tan rápido sube la lava
-var velocidad = 85 
+var velocidad = 85
 
 func _process(delta):
-	# La posición Y disminuye para que la lava suba en la pantalla
 	position.y -= velocidad * delta
 
+
 func _on_body_entered(body: Node2D) -> void:
-	body.game_over()
+
+	if body.has_method("game_over"):
+
+		for node in get_tree().get_nodes_in_group("players"):
+
+			if node.has_method("game_over"):
+				node.game_over()
