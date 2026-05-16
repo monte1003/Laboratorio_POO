@@ -14,6 +14,7 @@ extends CharacterBody2D
 var action_left:String
 var action_right:String
 var action_jump:String
+var action_attack:String
 
 var dead: bool = false
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	action_left = "p%d_izquierda" % player_id
 	action_right = "p%d_derecha" % player_id
 	action_jump = "p%d_arriba" % player_id
+	action_attack = "p%d_ataque" % player_id
 
 
 func _physics_process(delta: float) -> void:
@@ -78,7 +80,7 @@ func _handle_jump() -> void:
 		velocity.y *= jump_cut
 		
 func _handle_attack() -> void:
-	if Input.is_action_just_pressed(action_jump):
+	if Input.is_action_just_pressed(action_attack):
 		if not projectile_scene:
 			return
 			
