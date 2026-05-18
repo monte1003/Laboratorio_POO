@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://brit3g540d3kp"]
+
+[ext_resource type="Script" uid="uid://br2s6ca5ia183" path="res://scripts/enemy_ofensa.gd" id="1_h4e36"]
+[ext_resource type="Texture2D" uid="uid://d3rtgfxhc575u" path="res://assets/textures/entities/Enemies/Default/saw_monster_a.png" id="2_uq78f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0bn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uq78f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uq78f"]
+radius = 14.503832
+
+[node name="Enemy_Ofensa" type="Area2D" unique_id=695796083]
+collision_layer = 4
+collision_mask = 65
+script = ExtResource("1_h4e36")
+face_left = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2146336053]
+position = Vector2(32.43749, 56.812477)
+scale = Vector2(0.22766113, 0.23278813)
+sprite_frames = SubResource("SpriteFrames_q0bn2")
+autoplay = "default"
+frame_progress = 0.123190984
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519364451]
+position = Vector2(34, 48)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_uq78f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cj20xpr7agene"]
+
+[ext_resource type="Texture2D" uid="uid://bdmjqvloy2hxm" path="res://assets/textures/enviroment/lava.png" id="1_a5s42"]
+[ext_resource type="Script" uid="uid://bxwjydw0ssxu7" path="res://scripts/lava.gd" id="1_dw3wf"]
+[ext_resource type="Texture2D" uid="uid://m0fhwr1cvu8y" path="res://assets/textures/enviroment/lava2.png" id="3_f10td"]
+[ext_resource type="Texture2D" uid="uid://6w72a4o5gjdq" path="res://assets/textures/enviroment/lava3.png" id="4_3w25c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw3wf"]
+size = Vector2(1800, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snnrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a5s42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f10td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3w25c")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 5.0
+}]
+
+[node name="Lava" type="Area2D" unique_id=1526133704]
+collision_layer = 16
+script = ExtResource("1_dw3wf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2026179287]
+position = Vector2(0, 765)
+scale = Vector2(2.17, 2.17)
+shape = SubResource("RectangleShape2D_dw3wf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1927175752]
+scale = Vector2(3.505, 3.505)
+sprite_frames = SubResource("SpriteFrames_snnrc")
+animation = &"anim"
+autoplay = "anim"
+frame_progress = 0.6382449
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

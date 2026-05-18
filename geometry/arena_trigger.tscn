@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://gjdyr5mea78k"]
+
+[ext_resource type="Script" uid="uid://c1k4guoxksumv" path="res://scripts/arena_trigger.gd" id="1_px3eg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3om3"]
+size = Vector2(33.963516, 9.866903)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oe1bt"]
+b = Vector2(1, 662)
+
+[node name="ArenaTrigger" type="Area2D" unique_id=733900697 node_paths=PackedStringArray("invisible_wall")]
+collision_layer = 2
+script = ExtResource("1_px3eg")
+invisible_wall = NodePath("StaticBody2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=39649756]
+position = Vector2(215.5376, 228.40001)
+scale = Vector2(45.08, 45.08)
+shape = SubResource("RectangleShape2D_t3om3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453450895]
+process_mode = 4
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=925796620]
+position = Vector2(-617, -213)
+shape = SubResource("SegmentShape2D_oe1bt")
+
+[node name="TopLeft" type="Marker2D" parent="." unique_id=1587026619 groups=["left_markers"]]
+position = Vector2(-760, 19)
+
+[node name="TopRight" type="Marker2D" parent="." unique_id=774197459 groups=["right_markers"]]
+position = Vector2(1052, 11)
+
+[node name="BottomLeft" type="Marker2D" parent="." unique_id=1260964364 groups=["left_markers"]]
+position = Vector2(-737, 438)
+
+[node name="BottomRight" type="Marker2D" parent="." unique_id=694860785 groups=["right_markers"]]
+position = Vector2(1054, 446)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://baxlvnuakvsf6"]
+
+[ext_resource type="Script" uid="uid://cuyfgo2fgvfbk" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bxubnc2i1xvfj" path="res://assets/textures/entities/Character Sprites/boy/Dead__000.png" id="2_2dvfe"]
+[ext_resource type="SpriteFrames" uid="uid://b4xglw0npdcn2" path="res://assets/textures/entities/Character Sprites/boy_frames.tres" id="2_8j2k0"]
+[ext_resource type="Texture2D" uid="uid://cwamche6g16kj" path="res://assets/textures/entities/Character Sprites/boy/Idle__000.png" id="2_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://y7ra5q44p3xc" path="res://assets/textures/entities/Character Sprites/boy/Dead__001.png" id="3_giy8y"]
+[ext_resource type="Texture2D" uid="uid://bwmi8m3yyn1av" path="res://assets/textures/entities/Character Sprites/boy/Idle__001.png" id="3_gl8cc"]
+[ext_resource type="SpriteFrames" uid="uid://dph3kcjx5l1f4" path="res://assets/textures/entities/Character Sprites/girl_frames.tres" id="3_jwatl"]
+[ext_resource type="Texture2D" uid="uid://bbldvlkjri54u" path="res://assets/textures/entities/Character Sprites/boy/Idle__002.png" id="4_487ah"]
+[ext_resource type="Texture2D" uid="uid://b0t5g1ij2i04j" path="res://assets/textures/entities/Character Sprites/boy/Dead__002.png" id="4_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://d0dontpyiuo72" path="res://assets/textures/entities/Character Sprites/boy/Dead__003.png" id="5_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://b57jxjoc2lurr" path="res://assets/textures/entities/Character Sprites/boy/Idle__003.png" id="5_md1ol"]
+[ext_resource type="Texture2D" uid="uid://ccdiifturcgpk" path="res://assets/textures/entities/Character Sprites/boy/Idle__004.png" id="6_bj30b"]
+[ext_resource type="Texture2D" uid="uid://p34hejrf4hj4" path="res://assets/textures/entities/Character Sprites/boy/Dead__004.png" id="6_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://c0nbngsk6q4qm" path="res://assets/textures/entities/Character Sprites/boy/Dead__005.png" id="7_holxr"]
+[ext_resource type="Texture2D" uid="uid://ct4mtoigg3fbj" path="res://assets/textures/entities/Character Sprites/boy/Idle__005.png" id="7_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://b3o284eo3r85v" path="res://assets/textures/entities/Character Sprites/boy/Idle__006.png" id="8_hax0n"]
+[ext_resource type="Texture2D" uid="uid://g3eoujqylhaq" path="res://assets/textures/entities/Character Sprites/boy/Dead__006.png" id="8_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://bphqk75jeqa3g" path="res://assets/textures/entities/Character Sprites/boy/Dead__007.png" id="9_4gjji"]
+[ext_resource type="Texture2D" uid="uid://dy77pxf056lhv" path="res://assets/textures/entities/Character Sprites/boy/Idle__007.png" id="9_t4otl"]
+[ext_resource type="Texture2D" uid="uid://copmd7ljao4dw" path="res://assets/textures/entities/Character Sprites/boy/Idle__008.png" id="10_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://cswkubqj7ma6s" path="res://assets/textures/entities/Character Sprites/boy/Dead__008.png" id="10_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://1h52sc2s80kk" path="res://assets/textures/entities/Character Sprites/boy/Dead__009.png" id="11_6e8lb"]
+[ext_resource type="Texture2D" uid="uid://dg6rg6ude1384" path="res://assets/textures/entities/Character Sprites/boy/Idle__009.png" id="11_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://cvxo0xx55ls02" path="res://assets/textures/entities/Character Sprites/boy/Jump__000.png" id="12_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://dmgqxjt0v680t" path="res://assets/textures/entities/Character Sprites/boy/Jump__001.png" id="13_giy8y"]
+[ext_resource type="Texture2D" uid="uid://bl5rljbpk1cxu" path="res://assets/textures/entities/Character Sprites/boy/Jump__002.png" id="14_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://7xusk21xgltd" path="res://assets/textures/entities/Character Sprites/boy/Jump__003.png" id="15_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://clp7a8v304h2a" path="res://assets/textures/entities/Character Sprites/boy/Jump__004.png" id="16_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://bo763jsnxf1o4" path="res://assets/textures/entities/Character Sprites/boy/Jump__005.png" id="17_holxr"]
+[ext_resource type="Texture2D" uid="uid://dm0ek46w1icq6" path="res://assets/textures/entities/Character Sprites/boy/Jump__006.png" id="18_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://fsqlh8iqc78g" path="res://assets/textures/entities/Character Sprites/boy/Jump__007.png" id="19_4gjji"]
+[ext_resource type="Texture2D" uid="uid://4otcnbmov664" path="res://assets/textures/entities/Character Sprites/boy/Jump__008.png" id="20_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://dynjwiii4itss" path="res://assets/textures/entities/Character Sprites/boy/Jump__009.png" id="21_6e8lb"]
+[ext_resource type="Texture2D" uid="uid://7bxf2iv6ko2j" path="res://assets/textures/entities/Character Sprites/boy/Run__000.png" id="22_2gdjj"]
+[ext_resource type="Texture2D" uid="uid://cvo35yw3jqa6k" path="res://assets/textures/entities/Character Sprites/boy/Run__001.png" id="23_sc3ue"]
+[ext_resource type="Texture2D" uid="uid://bbtg111do4gs2" path="res://assets/textures/entities/Character Sprites/boy/Run__002.png" id="24_lxlsd"]
+[ext_resource type="Texture2D" uid="uid://n8psck2cqjl3" path="res://assets/textures/entities/Character Sprites/boy/Run__003.png" id="25_ha2mi"]
+[ext_resource type="Texture2D" uid="uid://bxscdkc78qki3" path="res://assets/textures/entities/Character Sprites/boy/Run__004.png" id="26_apa73"]
+[ext_resource type="Texture2D" uid="uid://caohtcdnc1y15" path="res://assets/textures/entities/Character Sprites/boy/Run__005.png" id="27_74r1k"]
+[ext_resource type="Texture2D" uid="uid://b5xih4nfxa5le" path="res://assets/textures/entities/Character Sprites/boy/Run__006.png" id="28_8svfe"]
+[ext_resource type="Texture2D" uid="uid://jsf8874c7ya5" path="res://assets/textures/entities/Character Sprites/boy/Run__007.png" id="29_2a3c5"]
+[ext_resource type="Texture2D" uid="uid://whcxmvm4kx4k" path="res://assets/textures/entities/Character Sprites/boy/Run__008.png" id="30_42b1b"]
+[ext_resource type="Texture2D" uid="uid://dfid32y40djpq" path="res://assets/textures/entities/Character Sprites/boy/Run__009.png" id="31_h7ic4"]
+[ext_resource type="FontFile" uid="uid://cljtf12kvtgwu" path="res://assets/fonts/ARCADE_R.TTF" id="42_giy8y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_giy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hhpqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u2ulf")
+}, {
+"duration": 999.0,
+"texture": ExtResource("11_6e8lb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_md1ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cs1tg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_giy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hhpqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_u2ulf")
+}, {
+"duration": 9999.0,
+"texture": ExtResource("21_6e8lb")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_2gdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sc3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lxlsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ha2mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_apa73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_74r1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8svfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2a3c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_42b1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_h7ic4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
+radius = 9.715641
+height = 46.445507
+
+[node name="Player" type="CharacterBody2D" unique_id=439786026 groups=["players"]]
+collision_mask = 1838
+script = ExtResource("1_3vyb7")
+boy_frames = ExtResource("2_8j2k0")
+girl_frames = ExtResource("3_jwatl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=31258974]
+unique_name_in_owner = true
+position = Vector2(-1.9073486e-06, -3.8146973e-06)
+scale = Vector2(0.405, 0.405)
+sprite_frames = SubResource("SpriteFrames_3vyb7")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469474505]
+scale = Vector2(4.22, 4.22)
+shape = SubResource("CapsuleShape2D_u8vuu")
+
+[node name="PlayerTitle" type="Label" parent="." unique_id=1213617841]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = -121.0
+offset_right = 63.0
+offset_bottom = -98.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("42_giy8y")
+text = "PLAYER 1"
+horizontal_alignment = 1
+vertical_alignment = 1

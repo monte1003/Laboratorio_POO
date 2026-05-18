@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ie3xoyj3tiap"]
+
+[ext_resource type="Texture2D" uid="uid://bn2oab8e483id" path="res://assets/textures/entities/Messages/Message1_V3 (1).png" id="1_k1uvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebnx7"]
+size = Vector2(485, 276.5)
+
+[node name="Message2" type="AnimatableBody2D" unique_id=1391773455]
+collision_layer = 513
+collision_mask = 1025
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929908009]
+position = Vector2(66.99999, 70.975494)
+scale = Vector2(1.6143788, 1.8832396)
+texture = ExtResource("1_k1uvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925375230]
+position = Vector2(60.5, 55.75)
+shape = SubResource("RectangleShape2D_ebnx7")

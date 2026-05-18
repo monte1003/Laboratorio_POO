@@ -1,0 +1,72 @@
+[gd_scene format=4 uid="uid://ch1pljqmnf7yi"]
+
+[ext_resource type="PackedScene" uid="uid://t6stvuaxbnly" path="res://scenes/geometry/map_update.tscn" id="1_0qepi"]
+[ext_resource type="PackedScene" uid="uid://baxlvnuakvsf6" path="res://scenes/base/player.tscn" id="1_44gv1"]
+[ext_resource type="PackedScene" uid="uid://bmneks7xbowh1" path="res://scenes/geometry/player_wall.tscn" id="2_fmg3e"]
+[ext_resource type="PackedScene" uid="uid://ciky2amq6v3nw" path="res://scenes/base/camera_2d.tscn" id="3_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://dvhs7pjcn8jts" path="res://scenes/stuff/proyectile.tscn" id="4_ftfob"]
+[ext_resource type="PackedScene" uid="uid://cbc520phbvxvd" path="res://scenes/enemies/boss_level_3.tscn" id="5_fmg3e"]
+[ext_resource type="PackedScene" uid="uid://uak8wtl6wsue" path="res://scenes/base/gui.tscn" id="7_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://re2nc0luyaqf" path="res://scenes/stuff/enviroment_heart.tscn" id="8_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://gjdyr5mea78k" path="res://scenes/geometry/arena_trigger.tscn" id="9_pimnq"]
+
+[node name="Level3" type="Node2D" unique_id=1704252430]
+
+[node name="Geometry" type="Node2D" parent="." unique_id=792795048]
+
+[node name="MapUpdate" parent="Geometry" unique_id=796943388 instance=ExtResource("1_0qepi")]
+tile_map_data = PackedByteArray("AAD//wAABwAAAAAAAAAIAAAABwAAAAAAAAARAAAABwAAAAAAAAD/////CQAAAAAAAAARAP//CQAAAAAAAAAIAP//CQAAAAAAAAA=")
+
+[node name="MapUpdate2" parent="Geometry" unique_id=1641821278 instance=ExtResource("1_0qepi")]
+tile_map_data = PackedByteArray("AAALAAEACgAAAAAAAAAOAAEACgAAAAAAAAARAAEACgAAAAAAAAAIAAEACgAAAAAAAAA=")
+
+[node name="Player_Wall" parent="Geometry" unique_id=553269821 instance=ExtResource("2_fmg3e")]
+position = Vector2(-547, 276)
+
+[node name="Player_Wall2" parent="Geometry" unique_id=828702087 instance=ExtResource("2_fmg3e")]
+position = Vector2(2448, 284)
+
+[node name="ArenaTrigger" parent="." unique_id=733900697 node_paths=PackedStringArray("boss_node") instance=ExtResource("9_pimnq")]
+position = Vector2(1503, -74)
+boss_node = NodePath("../Enemy/BossLevel3")
+
+[node name="Player" parent="." unique_id=439786026 instance=ExtResource("1_44gv1")]
+position = Vector2(57.999985, -4)
+scale = Vector2(0.505, 0.505)
+speed = 400.0
+jump_force = -600.0
+projectile_scene = ExtResource("4_ftfob")
+
+[node name="Player2" parent="." unique_id=1678927598 instance=ExtResource("1_44gv1")]
+position = Vector2(14, -1)
+scale = Vector2(0.5, 0.5)
+player_id = 2
+speed = 400.0
+jump_force = -600.0
+projectile_scene = ExtResource("4_ftfob")
+
+[node name="Enemy" type="Node2D" parent="." unique_id=2008949745]
+
+[node name="BossLevel3" parent="Enemy" unique_id=2079599919 instance=ExtResource("5_fmg3e")]
+position = Vector2(1657, -219)
+scale = Vector2(0.83, 0.83)
+collision_layer = 128
+max_health = 2
+
+[node name="Camera2D" parent="." unique_id=894477144 node_paths=PackedStringArray("p1", "p2") instance=ExtResource("3_0ljxa")]
+zoom = Vector2(2, 2)
+p1 = NodePath("../Player")
+p2 = NodePath("../Player2")
+y_offset = -30.0
+
+[node name="Proyectile" parent="." unique_id=1024150 instance=ExtResource("4_ftfob")]
+position = Vector2(948, -914)
+collision_layer = 255
+collision_mask = 255
+
+[node name="GUI" parent="." unique_id=1582347850 instance=ExtResource("7_fkk1g")]
+
+[node name="Enviroment_Heart" parent="." unique_id=1457216428 instance=ExtResource("8_ugcn1")]
+position = Vector2(2239, 151)
+
+[connection signal="body_entered" from="Proyectile" to="Enemy/BossLevel3" method="take_damage"]

@@ -1,0 +1,95 @@
+[gd_scene format=4 uid="uid://cjdqt6n6pn8o0"]
+
+[ext_resource type="PackedScene" uid="uid://t6stvuaxbnly" path="res://scenes/geometry/map_update.tscn" id="1_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://d35cjof7geu21" path="res://scenes/geometry/enemy_wall.tscn" id="2_excbq"]
+[ext_resource type="PackedScene" uid="uid://bmneks7xbowh1" path="res://scenes/geometry/player_wall.tscn" id="3_iav0o"]
+[ext_resource type="PackedScene" uid="uid://baq70gayu80vh" path="res://scenes/enemies/enemy_rumor.tscn" id="4_dnkej"]
+[ext_resource type="PackedScene" uid="uid://bqgj8ybwfoxcq" path="res://scenes/geometry/enemy_wall_vertical.tscn" id="4_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://brit3g540d3kp" path="res://scenes/enemies/enemy_ofensa_dark.tscn" id="6_excbq"]
+[ext_resource type="PackedScene" uid="uid://ciky2amq6v3nw" path="res://scenes/base/camera_2d.tscn" id="6_wtwp4"]
+[ext_resource type="Script" uid="uid://chau1guhw5r33" path="res://scripts/enemy_ofensa_dark.gd" id="7_iav0o"]
+[ext_resource type="PackedScene" uid="uid://re2nc0luyaqf" path="res://scenes/stuff/enviroment_heart.tscn" id="7_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://bid3aniuqku45" path="res://scenes/stuff/level_end.tscn" id="8_bahl2"]
+[ext_resource type="PackedScene" uid="uid://baxlvnuakvsf6" path="res://scenes/base/player.tscn" id="9_np2pn"]
+[ext_resource type="PackedScene" uid="uid://uak8wtl6wsue" path="res://scenes/base/gui.tscn" id="10_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://b7iaycbpmyjlu" path="res://scenes/Messages/Message_1.tscn" id="14_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://blq5cmnyk3sw1" path="res://scenes/Messages/Message_2.tscn" id="15_wtwp4"]
+[ext_resource type="Script" uid="uid://bi6b62elbu68g" path="res://scripts/message_2.gd" id="16_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://ie3xoyj3tiap" path="res://scenes/Messages/Message_3.tscn" id="17_bahl2"]
+
+[node name="Main" type="Node2D" unique_id=880945229]
+
+[node name="Geometry" type="Node2D" parent="." unique_id=367027776]
+
+[node name="MapUpdate2" parent="Geometry" unique_id=1700699546 instance=ExtResource("1_qxy0u")]
+tile_map_data = PackedByteArray("AADs//z/jQABAAMAAADt//z/jQADAAMAAADu//z/jQADAAMAAADv//z/jQADAAMAAADw//z/jQAFAAMAAAD0/wAAjQABAAMAAAD1/wAAjQADAAMAAAD2/wAAjQAFAAMAAAD5/wMAjQADAAMAAAD6/wIAjQANAAEAAAD7/wIAjQAPAAEAAAD4/wMAjQADAAMAAAD3/wMAjQABAAMAAAD2////jQAJAAMAAADu//r/jQAaAAYAAADv//v/jQAbAAcAAADw//v/jQAcAAcAAADw//r/jQAcAAYAAADw//n/jQAcAAUAAADv//r/jQAbAAYAAADu//v/jQAaAAcAAAD7/wMAjQAXAAEAAAD6/wMAjQAVAAEAAAD8/wIAjQAPAAEAAAD9/wIAjQAPAAEAAAD+/wIAjQAPAAEAAAD8/wMAjQAXAAEAAAD9/wMAjQAXAAEAAAD+/wMAjQAXAAEAAAD//wMAjQAXAAEAAAAAAAMAjQAXAAEAAAD//wIAjQAPAAEAAAAAAAIAjQAPAAEAAAABAAIAjQAPAAEAAAABAAMAjQAXAAEAAAACAAIAjQAPAAEAAAACAAMAjQAXAAEAAAADAAIAjQARAAEAAAADAAMAjQAZAAEAAAAEAAMAjQAPAAEAAAAFAAMAjQAPAAEAAAAGAAMAjQAbAAEAAAD1/wcAjQAPAAEAAAD2/wcAjQAPAAEAAAD3/wcAjQAPAAEAAAD5/wcAjQAPAAEAAAD4/wcAjQAPAAEAAAD6/wcAjQARAAEAAAD7/wgAjQARAAEAAAD6/wgAjQAZAAEAAAD5/wgAjQAXAAEAAAD4/wgAjQAXAAEAAAD3/wgAjQAXAAEAAAD2/wgAjQAXAAEAAAD1/wgAjQAXAAEAAAD7/wkAjQAZAAEAAAD8/woAjQAZAAEAAAD8/wkAjQARAAEAAAD6/wkAjQAXAAEAAAD6/woAjQAXAAEAAAD7/woAjQAXAAEAAAD5/woAjQAXAAEAAAD5/wkAjQAXAAEAAAD4/wkAjQAXAAEAAAD4/woAjQAXAAEAAAD3/woAjQAXAAEAAAD3/wkAjQAXAAEAAAD1/wkAjQAXAAEAAAD2/wkAjQAXAAEAAAD2/woAjQAXAAEAAAD1/woAjQAXAAEAAAD0/wcAjQATAAEAAAD9/woAjQAPAAEAAAD+/woAjQAPAAEAAAD//woAjQAPAAEAAAAAAAoAjQAPAAEAAAABAAoAjQAbAAEAAAAKAA8AjQABAAMAAAALAA8AjQADAAMAAAAMAA8AjQAFAAMAAAAWABEAjQATAAEAAAAXABEAjQAbAAEAAAA=")
+
+[node name="MapDecor" parent="Geometry" unique_id=796943388 instance=ExtResource("1_qxy0u")]
+tile_map_data = PackedByteArray("AADv//n/jQAbAAUAAAA=")
+
+[node name="Enemy_Wall" parent="Geometry" unique_id=529289322 groups=["horizontal_wall"] instance=ExtResource("2_excbq")]
+position = Vector2(-623, 76)
+
+[node name="Enemy_Wall2" parent="Geometry" unique_id=884916033 groups=["horizontal_wall"] instance=ExtResource("2_excbq")]
+position = Vector2(385, 71)
+
+[node name="Player_Wall" parent="Geometry" unique_id=553269821 instance=ExtResource("3_iav0o")]
+position = Vector2(-2539, -598)
+
+[node name="Enemy_Wall3" parent="Geometry" unique_id=164948687 groups=["vertical_wall"] instance=ExtResource("4_mm8aj")]
+position = Vector2(-345, -222)
+
+[node name="Enemy_Wall4" parent="Geometry" unique_id=201759966 groups=["vertical_wall"] instance=ExtResource("4_mm8aj")]
+position = Vector2(-350, 222)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1587010482]
+
+[node name="Enemy_Rumor" parent="Enemies" unique_id=1186592903 instance=ExtResource("4_dnkej")]
+position = Vector2(2425, 1521)
+
+[node name="Enemy_Ofensa_Dark" parent="Enemies" unique_id=1347981047 instance=ExtResource("6_excbq")]
+position = Vector2(243, 107)
+script = ExtResource("7_iav0o")
+speed = 1200.0
+
+[node name="Camera2D" parent="." unique_id=894477144 node_paths=PackedStringArray("p1", "p2") instance=ExtResource("6_wtwp4")]
+p1 = NodePath("../Player")
+p2 = NodePath("../Player2")
+
+[node name="Items" type="Node2D" parent="." unique_id=122756264]
+
+[node name="Enviroment_Heart" parent="Items" unique_id=1457216428 instance=ExtResource("7_iwr0g")]
+position = Vector2(1095, -441)
+
+[node name="Enviroment_Heart2" parent="Items" unique_id=1948418135 instance=ExtResource("7_iwr0g")]
+position = Vector2(-270, 232)
+
+[node name="Enviroment_Heart3" parent="Items" unique_id=835769027 instance=ExtResource("7_iwr0g")]
+position = Vector2(333, 229)
+
+[node name="Level_End" parent="Items" unique_id=108196674 instance=ExtResource("8_bahl2")]
+position = Vector2(3845.9995, 1977)
+load_level = "res://scenes/levels/level_2.tscn"
+
+[node name="Player2" parent="." unique_id=2101689558 instance=ExtResource("9_np2pn")]
+position = Vector2(-2446, -607)
+player_id = 2
+move_accel = 3000.0
+
+[node name="Player" parent="." unique_id=439786026 instance=ExtResource("9_np2pn")]
+position = Vector2(-2173, -612)
+move_accel = 3000.0
+
+[node name="GUI" parent="." unique_id=1582347850 instance=ExtResource("10_v6ha0")]
+
+[node name="Messages" type="Node2D" parent="." unique_id=867209597]
+
+[node name="Message1" parent="Messages" unique_id=1567721569 instance=ExtResource("14_mm8aj")]
+position = Vector2(749, 1559)
+
+[node name="Message2" parent="Messages" unique_id=1391773455 instance=ExtResource("15_wtwp4")]
+position = Vector2(2202, 1760)
+script = ExtResource("16_iwr0g")
+
+[node name="Message3" parent="Messages" unique_id=1391437448 instance=ExtResource("17_bahl2")]
+position = Vector2(3651, 2207)
