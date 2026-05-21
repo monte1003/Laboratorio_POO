@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://uak8wtl6wsue"]
+
+[ext_resource type="Script" uid="uid://c7qfoagpli21m" path="res://scripts/gui.gd" id="1_efmwq"]
+[ext_resource type="Texture2D" uid="uid://c4hfismhy62dp" path="res://assets/textures/enviroment/hud_heart.png" id="2_mfius"]
+
+[node name="GUI" type="CanvasLayer" unique_id=1582347850]
+script = ExtResource("1_efmwq")
+
+[node name="Label_Heart" type="Label" parent="." unique_id=527842897]
+anchors_preset = -1
+anchor_left = 0.95400006
+anchor_top = 0.002
+anchor_right = 0.95400006
+anchor_bottom = 0.002
+offset_left = 0.15997314
+offset_top = -0.08000004
+offset_right = 40.159973
+offset_bottom = 49.92
+theme_override_font_sizes/font_size = 36
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GUI_Heart" type="Sprite2D" parent="." unique_id=1744230264]
+position = Vector2(886, 26)
+texture = ExtResource("2_mfius")

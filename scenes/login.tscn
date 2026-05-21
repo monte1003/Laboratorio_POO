@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://clg2wgtt505o7"]
+
+[ext_resource type="Script" uid="uid://tbdp8g30u717" path="res://scripts/login.gd" id="1_47b6t"]
+[ext_resource type="Texture2D" uid="uid://cs0fmgphmkupx" path="res://Images/fondoLogin.png" id="2_47b6t"]
+[ext_resource type="Texture2D" uid="uid://ciceihyebxmay" path="res://Images/botonEntrar .png" id="3_0emk2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cs5o2"]
+load_path = "res://.godot/imported/botonEntrarP.png-5147f17cf717cbe87248477b23afd120.ctex"
+
+[node name="Menu" type="Control" unique_id=1235527209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_47b6t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1291677832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1150744567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_47b6t")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=313230518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.312
+anchor_right = 1.0
+anchor_bottom = 0.312
+offset_left = -428.0
+offset_top = 46.51999
+offset_right = -94.0
+offset_bottom = 237.51999
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="username" type="LineEdit" parent="." unique_id=2078846045]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 466.0
+offset_top = 270.0
+offset_right = 660.0
+offset_bottom = 301.0
+
+[node name="password" type="LineEdit" parent="." unique_id=1281832291]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 466.0
+offset_top = 218.0
+offset_right = 661.0
+offset_bottom = 249.0
+
+[node name="loginButton" type="TextureButton" parent="." unique_id=321242693]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 369.0
+offset_right = 582.0
+offset_bottom = 419.0
+texture_normal = ExtResource("3_0emk2")
+texture_pressed = SubResource("CompressedTexture2D_cs5o2")
+texture_hover = ExtResource("3_0emk2")
+script = ExtResource("1_47b6t")
+
+[node name="error_label" type="Label" parent="." unique_id=1282174719]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30200002
+anchor_top = 0.596
+anchor_right = 0.30200002
+anchor_bottom = 0.596
+offset_left = 0.07998657
+offset_top = 0.16000366
+offset_right = 371.08
+offset_bottom = 36.160004
+theme_override_font_sizes/font_size = 25
+vertical_alignment = 1
+
+[connection signal="pressed" from="loginButton" to="loginButton" method="_on_pressed"]

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b3dwgb38fkiak"]
+
+[ext_resource type="Texture2D" uid="uid://cbg65s3gjvr1h" path="res://assets/textures/menu/menu.jpeg" id="1_158mb"]
+[ext_resource type="Script" uid="uid://dfw52ikanttkg" path="res://scripts/menu.gd" id="1_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://bg5s3ghwi0s31" path="res://Images/icono jugar.jpeg" id="3_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dods7extmlkgv" path="res://Images/icono opciones.jpeg" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://dy3efw8nksifs" path="res://Images/icono salir.jpeg" id="5_v86rl"]
+
+[node name="Menu" type="Control" unique_id=1235527209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwsa2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1291677832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1150744567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_158mb")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=313230518]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98100007
+anchor_top = 0.294
+anchor_right = 0.98100007
+anchor_bottom = 0.294
+offset_left = -324.76007
+offset_top = -61.759995
+offset_right = -56.76007
+offset_bottom = 178.24
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="ColorRect/VBoxContainer" unique_id=297886546]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 12
+icon = ExtResource("3_4ytvr")
+
+[node name="Options" type="Button" parent="ColorRect/VBoxContainer" unique_id=1773906782]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 12
+icon = ExtResource("4_g3eks")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Quit" type="Button" parent="ColorRect/VBoxContainer" unique_id=185228285]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 12
+icon = ExtResource("5_v86rl")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

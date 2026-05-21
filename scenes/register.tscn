@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://rbdnhnfu8qvt"]
+
+[ext_resource type="Script" uid="uid://tbdp8g30u717" path="res://scripts/login.gd" id="1_i4ar7"]
+[ext_resource type="Script" uid="uid://bsycmq0vois6g" path="res://scenes/register.gd" id="1_n2w5e"]
+[ext_resource type="Texture2D" uid="uid://derhfnrqsfjhb" path="res://Images/fondoregister.png" id="2_n2w5e"]
+[ext_resource type="Texture2D" uid="uid://davfk426ti2x1" path="res://Images/BotonRegis.png" id="3_i4ar7"]
+[ext_resource type="Texture2D" uid="uid://pj0wh7mq8nwy" path="res://Images/BotonRegisP .png" id="4_b7sfs"]
+
+[node name="Menu" type="Control" unique_id=1235527209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n2w5e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1291677832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1150744567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n2w5e")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=313230518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.386
+anchor_right = 0.707
+anchor_bottom = 0.386
+offset_left = -333.72003
+offset_top = -53.440002
+offset_right = 0.27996826
+offset_bottom = 137.56
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="username" type="LineEdit" parent="." unique_id=2078846045]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 466.0
+offset_top = 270.0
+offset_right = 661.0
+offset_bottom = 301.0
+
+[node name="password" type="LineEdit" parent="." unique_id=1281832291]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 466.0
+offset_top = 217.0
+offset_right = 660.0
+offset_bottom = 248.0
+
+[node name="registerButton" type="TextureButton" parent="." unique_id=321242693]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 396.0
+offset_top = 370.0
+offset_right = 596.0
+offset_bottom = 421.0
+texture_normal = ExtResource("3_i4ar7")
+texture_pressed = ExtResource("4_b7sfs")
+texture_hover = ExtResource("3_i4ar7")
+script = ExtResource("1_i4ar7")
+
+[node name="error_label" type="Label" parent="." unique_id=1282174719]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35900003
+anchor_top = 0.587
+anchor_right = 0.35900003
+anchor_bottom = 0.587
+offset_left = 0.35998535
+offset_top = 0.019989014
+offset_right = 315.36
+offset_bottom = 35.01999
+theme_override_font_sizes/font_size = 25
+vertical_alignment = 1
+
+[connection signal="pressed" from="registerButton" to="." method="_on_register_button_pressed"]
